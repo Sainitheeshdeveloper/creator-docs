@@ -1,7 +1,20 @@
 ---
 title: Users and Players
 description: The Player instance contains information on the individual users within your experience.
----
+-- Create new widget GUI
+local testWidget = plugin:CreateDockWidgetPluginGui("TestWidget", widgetInfo)
+testWidget.Title = "Test Widget"  -- Optional widget title
+
+local testButton = Instance.new("TextButton")
+testButton.BorderSizePixel = 0
+testButton.TextSize = 20
+testButton.TextColor3 = Color3.new(1,0.2,0.4)
+testButton.AnchorPoint = Vector2.new(0.5,0.5)
+testButton.Size = UDim2.new(1,0,1,0)
+testButton.Position = UDim2.new(0.5,0,0.5,0)
+testButton.SizeConstraint = Enum.SizeConstraint.RelativeYY
+testButton.Text = "Click Me"
+testButton.Parent = testWidget
 
 When a user joins an experience, Roblox represents them as a **Player** in the data model. The `Class.Player` object contains information about the user that's universal across experiences, such as their username, friend list, saved [avatar character](../characters/index.md#avatar-characters), and Roblox membership type, as well as properties, methods, and events that affects the user's lifecycle between joining and leaving your experience.
 
